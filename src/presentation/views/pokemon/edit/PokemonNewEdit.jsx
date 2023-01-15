@@ -52,6 +52,7 @@ const PokemonNewEdit = (props) => {
           id="attack"
           name="attack"
           label="Ataque: "
+          type="range"
           value={attack}
           minValue={0}
           maxValue={100}
@@ -70,6 +71,7 @@ const PokemonNewEdit = (props) => {
           id="defense"
           name="defense"
           label="Defensa: "
+          type="range"
           value={defense}
           minValue={0}
           maxValue={100}
