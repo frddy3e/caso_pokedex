@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/caso_pokedex/static/css/main.dd1d9e81.css",
+    "main.js": "/caso_pokedex/static/js/main.bff90fc1.js",
+    "static/js/787.7e0b23c5.chunk.js": "/caso_pokedex/static/js/787.7e0b23c5.chunk.js",
+    "index.html": "/caso_pokedex/index.html",
+    "main.dd1d9e81.css.map": "/caso_pokedex/static/css/main.dd1d9e81.css.map",
+    "main.bff90fc1.js.map": "/caso_pokedex/static/js/main.bff90fc1.js.map",
+    "787.7e0b23c5.chunk.js.map": "/caso_pokedex/static/js/787.7e0b23c5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd1d9e81.css",
+    "static/js/main.bff90fc1.js"
+  ]
+}
