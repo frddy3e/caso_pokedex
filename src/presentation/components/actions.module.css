@@ -1,0 +1,17 @@
+.button {
+    background-color: transparent;
+    border: 0ch;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0ch 0ch 1ch 0ch;
+}
+
+.icon {
+    color: #5B51E0;
+
+}

@@ -1,0 +1,23 @@
+.table_container {
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.th {
+  /* background-color: #eee; */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-collapse: collapse;
+}
+
+.td {
+  border: 1px solid #ccc;
+  padding: 1px;
+  border-collapse: collapse;
+  height: 25px;
+}

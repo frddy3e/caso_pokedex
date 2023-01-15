@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: views/pokemon/edit/PokemonNewEdit.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: views/pokemon/edit/PokemonNewEdit.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
+import InputText from "../../../components/inputText";
+import Button from "../../../components/button";
+import Slider from "../../../components/slider";
+import Title from "../../../components/title";
+
+import { AiOutlineSave } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
+
+import Style from "./PokemonNewEdit.module.css";
+
+/**
+ * The componenet that renders the pokemon new/edit view.
+ * @component
+ * @example
+ * return (
+ * &lt;PokemonNewEdit
+ *  pokemon={pokemon}
+ * onSave={onSave}
+ * onCancel={onCancel}
+ * newPokemon=false
+ * editPokemon=true
+ *  />
+ * )
+ */
+const PokemonNewEdit = (props) => {
+  const [name, setName] = useState(props.pokemon.name);
+  const [attack, setAttack] = useState(props.pokemon.attack);
+  const [defense, setDefense] = useState(props.pokemon.defense);
+  const [image, setImage] = useState(props.pokemon.image);
+
+  const { onSave, onCancel, newPokemon, editPokemon } = props;
+
+  return (
+    &lt;div data-testid="pokemon-new-edit" className={Style.container}>
+      &lt;Title
+        text={
+          newPokemon ? "Nuevo Pokemon" : editPokemon ? "Editar Pokemon" : ""
+        }
+      />
+      &lt;div className={Style.formRow}>
+        &lt;InputText
+          id="name"
+          name="name"
+          label="Nombre: "
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        &lt;Slider
+          id="attack"
+          name="attack"
+          label="Ataque: "
+          value={attack}
+          minValue={0}
+          maxValue={100}
+          onChange={(e) => setAttack(parseInt(e.target.value))}
+        />
+      &lt;/div>
+      &lt;div className={Style.formRow}>
+        &lt;InputText
+          id="image"
+          name="image"
+          label="Imagen: "
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+        />
+        &lt;Slider
+          id="defense"
+          name="defense"
+          label="Defensa: "
+          value={defense}
+          minValue={0}
+          maxValue={100}
+          onChange={(e) => setDefense(parseInt(e.target.value))}
+        />
+      &lt;/div>
+      &lt;div className={Style.buttonRow}>
+        &lt;Button
+          text={&lt;p>Guardar&lt;/p>}
+          onClick={() => {
+            const savePokemon = {
+              id: props.pokemon.id,
+              name: name,
+              attack: attack,
+              defense: defense,
+              image: image,
+              hp: 100,
+              type: "NA",
+              idAuthor: 1,
+            };
+
+            //console.log(savePokemon);
+            onSave(savePokemon);
+          }}
+          icon={&lt;AiOutlineSave size={20} />}
+          disabled={
+            name === "" || (attack === 0 &amp;&amp; defense === 0) || image === ""
+          }
+        />
+        &lt;Button
+          text={&lt;p>Cancelar&lt;/p>}
+          onClick={onCancel}
+          icon={&lt;AiOutlineClose size={20} />}
+          disabled={false}
+        />
+      &lt;/div>
+    &lt;/div>
+  );
+};
+
+PokemonNewEdit.defaultProps = {
+  pokemon: {},
+  onSave: () => {},
+  onCancel: () => {},
+  newPokemon: false,
+  editPokemon: false,
+};
+
+PokemonNewEdit.propTypes = {
+  /**
+   * The pokemon data
+   */
+  pokemon: PropTypes.object,
+  /**
+   * The function to call when the user clicks on the save button
+   */
+  onSave: PropTypes.func,
+  /**
+   * The function to call when the user clicks on the cancel button
+   */
+  onCancel: PropTypes.func,
+
+  /**
+   * The flag to indicate if the view is for a new pokemon
+   * @default false
+   * @type {boolean}
+   */
+  newPokemon: PropTypes.bool,
+
+  /**
+   * The flag to indicate if the view is for a edit pokemon
+   * @default false
+   * @type {boolean}
+   */
+  editPokemon: PropTypes.bool,
+};
+
+export default PokemonNewEdit;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Actions.html">Actions</a></li><li><a href="Button.html">Button</a></li><li><a href="InputText.html">InputText</a></li><li><a href="InputTextIcon.html">InputTextIcon</a></li><li><a href="PokemonNewEdit.html">PokemonNewEdit</a></li><li><a href="PokemonTable.html">PokemonTable</a></li><li><a href="Slider.html">Slider</a></li><li><a href="Table.html">Table</a></li><li><a href="Title.html">Title</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Jan 15 2023 13:00:34 GMT-0500 (Ecuador Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 1rem 0rem 1rem 0rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0rem 1rem 0rem;
+  border: 1px solid #ccc;
+  /*padding-left: 3rem;*/
+  padding-bottom: 1rem;
+}
