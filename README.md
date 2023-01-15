@@ -1,6 +1,6 @@
 # Welcome to the Pokedex App
 
-The project is available at [https://frddy3e.github.io/caso_pokedex/)
+The project is available at [https://frddy3e.github.io/caso_pokedex/](https://frddy3e.github.io/caso_pokedex/)
 
 # Install the dependencies
 
